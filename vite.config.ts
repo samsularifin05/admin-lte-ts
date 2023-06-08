@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { viteSingleFile } from "vite-plugin-singlefile";
+// import { viteSingleFile } from "vite-plugin-singlefile";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import htmlMinifier from "vite-plugin-html-minifier";
@@ -12,7 +12,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    viteSingleFile(),
+    // viteSingleFile(),
     htmlMinifier({
       minify: true
     })
