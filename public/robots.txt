@@ -1,0 +1,12 @@
+User-agent: 008
+Disallow: /
+
+User-agent: SiteAuditBot
+Crawl-delay: 1
+Allow: /
+
+User-agent: Semrushbot-SI
+Allow: /
+
+User-agent: Yahoo Pipes 2.0
+Disallow: /
