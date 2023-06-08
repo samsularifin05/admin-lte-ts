@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-refresh/only-export-components */
 import { memo, useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
@@ -6,9 +7,9 @@ import { Menu } from "./menu";
 interface props {
   data: Menu;
   submenu?: string;
-  handleExpand?: any;
-  expand?: any;
-  navheader?: any;
+  handleExpand?: unknown;
+  expand?: unknown;
+  navheader?: unknown;
 }
 const SidebarNavList: React.FC<props> = (props) => {
   const icon = props.data.icon && <i className={props.data.icon} />;
@@ -43,7 +44,7 @@ const SidebarNavList: React.FC<props> = (props) => {
     <Route
       path={props.data.path}
       exact={props.data.exact}
-      children={({ match }) => (
+      children={() => (
         <>
           {props.data.navheader && (
             <li className="nav-header">{props.data.title}</li>

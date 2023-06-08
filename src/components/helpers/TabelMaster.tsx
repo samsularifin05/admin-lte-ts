@@ -22,10 +22,11 @@ const TabelMaster: React.FC<PropsData> = (props) => {
   const setModal = useSetRecoilState(modalShow);
   useEffect(() => {
     setSearchDataSource(props.dataSource);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataSource]);
 
   const tableProps = {
-    loading,
+    loading
   };
 
   return (
@@ -36,7 +37,7 @@ const TabelMaster: React.FC<PropsData> = (props) => {
           dataSource={dataSource}
           setDataSource={setSearchDataSource}
           inputProps={{
-            placeholder: "Search Data...",
+            placeholder: "Search Data..."
           }}
         />
       </Col>
@@ -49,7 +50,7 @@ const TabelMaster: React.FC<PropsData> = (props) => {
               setModal({
                 isModalShow: true,
                 isEdit: false,
-                data: [],
+                data: []
               })
             }
             color="primary"
@@ -60,7 +61,7 @@ const TabelMaster: React.FC<PropsData> = (props) => {
         <Table
           {...tableProps}
           pagination={{
-            total: totalPage || 0, // total count returned from backend
+            total: totalPage || 0 // total count returned from backend
           }}
           columns={columns}
           dataSource={searchDataSource || []}

@@ -80,7 +80,7 @@ export const doEncrypt = (dataBeforeCopy: any, ignore: any = []) => {
       const result = ignore.find((find: any) => find === x);
       if (!result) {
         if (Array.isArray(data[x])) {
-          data[x] = data[x].map((y: any, i: any) => {
+          data[x] = data[x].map((y: any) => {
             if (typeof y === "string") {
               return encryptascii(y);
             } else if (
@@ -132,7 +132,7 @@ export const doDecrypt = (dataBeforeCopy: any, ignore: any = []) => {
       const result = ignore.find((find: any) => find === x);
       if (!result) {
         if (Array.isArray(data[x])) {
-          data[x] = data[x].map((y: any, i: any) => {
+          data[x] = data[x].map((y: any) => {
             if (typeof y === "string") {
               return decryptascii(y);
             } else if (
