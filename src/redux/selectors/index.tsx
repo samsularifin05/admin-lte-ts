@@ -1,11 +1,11 @@
-import ReducerType from "../types/ReducerType";
+import { RootState } from "../store";
 
-const themes = (state: ReducerType) => state.theme;
-const utility = (state: ReducerType) => state.utility;
+const themes = (state: RootState) => state.theme;
+const utility = (state: RootState) => state.utility;
 
 const selector = {
   themes,
-  utility
+  utility,
 };
 
 export { selector };

@@ -6,20 +6,20 @@ const MenuRoutes = [
     path: "/",
     exact: true,
     title: "Login",
-    component: () => <Login />
+    component: () => <Login />,
   },
   {
     path: "/dashboard",
     exact: true,
     title: "Dashboard",
-    component: () => <Dashboard />
+    component: () => <Dashboard />,
   },
 
   {
     path: "/404",
     exact: false,
-    component: () => <PageNotFound />
-  }
+    component: () => <PageNotFound />,
+  },
 ];
 
 export default MenuRoutes;

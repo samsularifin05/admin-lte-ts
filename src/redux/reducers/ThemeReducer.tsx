@@ -1,40 +1,35 @@
-import { ThemeAction, ThemeActionTypes, ThemeState } from "../types";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { ThemeState } from "../types";
 
 const initialState: ThemeState = {
   header: true,
   sidebar: true,
   footer: true,
-  content: true
+  content: true,
 };
 
-const ThemeReducer = (
-  state: ThemeState = initialState,
-  action: ThemeAction
-): ThemeState => {
-  switch (action.type) {
-    case ThemeActionTypes.SET_HEADER:
-      return {
-        ...state,
-        header: action.payload
-      };
-    case ThemeActionTypes.SET_SIDEBAR:
-      return {
-        ...state,
-        sidebar: action.payload
-      };
-    case ThemeActionTypes.SET_FOOTER:
-      return {
-        ...state,
-        footer: action.payload
-      };
-    case ThemeActionTypes.SET_CONTENT:
-      return {
-        ...state,
-        content: action.payload
-      };
-    default:
-      return state;
-  }
-};
+export const ThemeReducer = createSlice({
+  name: "Theme",
+  initialState,
+  reducers: {
+    setHeader: (state, action: PayloadAction<boolean>) => {
+      state.header = action.payload;
+    },
+    setContent: (state, action: PayloadAction<boolean>) => {
+      state.content = action.payload;
+    },
+    setFooter: (state, action: PayloadAction<boolean>) => {
+      state.footer = action.payload;
+    },
+    setSidebar: (state, action: PayloadAction<boolean>) => {
+      state.sidebar = action.payload;
+    },
+  },
+});
 
-export default ThemeReducer;
+// Action creators are generated for each case reducer function
+export const { setContent, setFooter, setSidebar, setHeader } =
+  ThemeReducer.actions;
+
+export default ThemeReducer.reducer;

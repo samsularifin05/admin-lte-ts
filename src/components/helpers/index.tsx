@@ -9,7 +9,7 @@ import {
   LoadingContent,
   removeWindowClass,
   setItem,
-  useWindowSize
+  useWindowSize,
 } from "./function";
 
 const Button = lazy(() => import("./Button"));
@@ -17,14 +17,13 @@ const Card = lazy(() => import("./Card"));
 const Col = lazy(() => import("./Col"));
 const Row = lazy(() => import("./Row"));
 const HeaderContent = lazy(() => import("./HeaderContent"));
-const TabelMaster = lazy(() => import("./TabelMaster"));
 const PanelContent = lazy(() => import("./PanelContent"));
 import {
   Toast,
   NotifSuccess,
   NotiWarning,
   NotifEror,
-  NotifInfo
+  NotifInfo,
 } from "./Toast";
 import ReanderField from "./Filed";
 export {
@@ -34,7 +33,6 @@ export {
   removeWindowClass,
   useWindowSize,
   LoadingApp,
-  TabelMaster,
   NotifSuccess,
   NotiWarning,
   NotifEror,
@@ -49,5 +47,5 @@ export {
   Row,
   PanelContent,
   HeaderContent,
-  Card
+  Card,
 };

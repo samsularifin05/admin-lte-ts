@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selector, utilityAction } from "./redux";
+import { selector, sidebarToggle } from "./redux";
 import {
   Content,
   Header,
@@ -9,10 +9,12 @@ import {
   removeWindowClass,
   calculateWindowSize,
   addWindowClass,
-  useWindowSize
+  useWindowSize,
+  LoadingContent
 } from "./components";
 import { Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { screenSize } from "./redux";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +22,9 @@ function App() {
   const utility = useSelector(selector.utility);
 
   const windowSize = useWindowSize();
+  const handleToggleMenuSidebar = () => {
+    dispatch(sidebarToggle(Boolean(!utility.sidebarToggle)));
+  };
 
   useEffect(() => {
     removeWindowClass("sidebar-closed");
@@ -28,7 +33,7 @@ function App() {
 
     const size = calculateWindowSize(windowSize.width);
     if (utility.screenSize !== size) {
-      dispatch(utilityAction.screenSize(size));
+      dispatch(screenSize(size));
     }
 
     if (utility.sidebarToggle && utility.screenSize === "lg") {
@@ -48,6 +53,13 @@ function App() {
         {theme.content && <Content />}
         {theme.footer && <Footer />}
       </div>
+      {utility.setLoading.content && <LoadingContent />}
+      <div
+        id="sidebar-overlay"
+        role="presentation"
+        onClick={handleToggleMenuSidebar}
+        onKeyDown={() => {}}
+      />
     </Suspense>
   );
 }

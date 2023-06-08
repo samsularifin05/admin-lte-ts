@@ -35,7 +35,7 @@ export const NotifSuccess = (text: string) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light"
+        theme: "light",
       });
 };
 export const NotifEror = (text: string) => {
@@ -49,7 +49,7 @@ export const NotifEror = (text: string) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light"
+        theme: "light",
       });
 };
 export const NotifInfo = (text: string) => {
@@ -63,7 +63,7 @@ export const NotifInfo = (text: string) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light"
+        theme: "light",
       });
 };
 export const NotiWarning = (text: string) => {
@@ -77,6 +77,6 @@ export const NotiWarning = (text: string) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light"
+        theme: "light",
       });
 };

@@ -3,13 +3,13 @@ import React, { memo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { selector, utilityAction } from "../../redux";
+import { selector, setLoading, sidebarToggle, stopLoading } from "../../redux";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
   const utility = useSelector(selector.utility);
   const handleToggleMenuSidebar = () => {
-    dispatch(utilityAction.toggleSidebarMenu(Boolean(!utility.sidebarToggle)));
+    dispatch(sidebarToggle(Boolean(!utility.sidebarToggle)));
   };
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
@@ -17,14 +17,14 @@ const Header: React.FC = () => {
   };
   const logout = () => {
     dispatch(
-      utilityAction.setLoading({
-        content: true
+      setLoading({
+        content: true,
       })
     );
     setTimeout(() => {
       localStorage.clear();
       window.location.href = "/";
-      dispatch(utilityAction.stopLoading());
+      dispatch(stopLoading());
     }, 300);
   };
   return (

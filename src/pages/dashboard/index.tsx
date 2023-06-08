@@ -1,16 +1,9 @@
 // import { useDispatch, useSelector } from 'react-redux'
 
 import { Link } from "react-router-dom";
-import { Card,  PanelContent } from "../../components/helpers";
+import { Card, PanelContent } from "../../components/helpers";
 
 const Dashboard = function () {
-
-  // useEffect(() => {
-  //   if (getItem("userdata").token === undefined) {
-  //     history.push("/");
-  //   }
-  // }, []);
-
   return (
     <PanelContent headerContent title="Dashboard">
       <div className="row">

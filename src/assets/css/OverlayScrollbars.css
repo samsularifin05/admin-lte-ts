@@ -85,7 +85,7 @@ body.os-dragging * {
 #os-dummy-scrollbar-size {
   position: fixed;
   opacity: 0;
-  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   visibility: hidden;
   overflow: scroll;
   height: 500px;
@@ -101,7 +101,7 @@ body.os-dragging * {
 #os-dummy-scrollbar-size:after,
 .os-content:before,
 .os-content:after {
-  content: '';
+  content: "";
   display: table;
   width: 0.01px;
   height: 0.01px;
@@ -224,7 +224,7 @@ body.os-dragging * {
   z-index: -1;
   pointer-events: none;
 }
-.os-content > .os-textarea[wrap='off'] {
+.os-content > .os-textarea[wrap="off"] {
   white-space: pre !important;
   margin: 0px !important;
 }
@@ -295,7 +295,7 @@ body.os-dragging * {
   box-sizing: border-box;
 }
 .os-resize-observer-host.observed > .os-resize-observer:before {
-  content: '';
+  content: "";
   box-sizing: content-box;
   padding: inherit;
   border: inherit;
@@ -384,8 +384,10 @@ CUSTOM SCROLLBARS AND CORNER CORE:
 
 .os-host-transition > .os-scrollbar,
 .os-host-transition > .os-scrollbar-corner {
-  -webkit-transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-  transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  -webkit-transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s,
+    bottom 0.3s, left 0.3s;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s,
+    left 0.3s;
 }
 html.os-html > .os-host > .os-scrollbar {
   position: absolute; /* could be position: fixed; but it causes issues on iOS (-webkit-overflow-scrolling: touch) */
@@ -395,7 +397,7 @@ html.os-html > .os-host > .os-scrollbar {
 .os-scrollbar-corner {
   position: absolute;
   opacity: 1;
-  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   z-index: 1;
 }
 .os-scrollbar-corner {
@@ -451,12 +453,18 @@ html.os-html > .os-host > .os-scrollbar {
 }
 .os-scrollbar-auto-hidden,
 .os-padding + .os-scrollbar-corner,
-.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-corner,
+.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden
+  > .os-scrollbar-corner,
 .os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal,
-.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-corner,
+.os-host-resize-disabled.os-host-scrollbar-vertical-hidden
+  > .os-scrollbar-corner,
 .os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical,
-.os-scrollbar-horizontal.os-scrollbar-auto-hidden + .os-scrollbar-vertical + .os-scrollbar-corner,
-.os-scrollbar-horizontal + .os-scrollbar-vertical.os-scrollbar-auto-hidden + .os-scrollbar-corner,
+.os-scrollbar-horizontal.os-scrollbar-auto-hidden
+  + .os-scrollbar-vertical
+  + .os-scrollbar-corner,
+.os-scrollbar-horizontal
+  + .os-scrollbar-vertical.os-scrollbar-auto-hidden
+  + .os-scrollbar-corner,
 .os-scrollbar-horizontal.os-scrollbar-auto-hidden
   + .os-scrollbar-vertical.os-scrollbar-auto-hidden
   + .os-scrollbar-corner {
@@ -479,12 +487,15 @@ html.os-html > .os-host > .os-scrollbar {
 .os-dragging .os-scrollbar-corner.os-scrollbar-corner-resize {
   cursor: default;
 }
-.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
+.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden
+  > .os-scrollbar-vertical {
   top: 0;
   bottom: 0;
 }
-.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-horizontal,
-.os-host-rtl.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-horizontal {
+.os-host-resize-disabled.os-host-scrollbar-vertical-hidden
+  > .os-scrollbar-horizontal,
+.os-host-rtl.os-host-resize-disabled.os-host-scrollbar-vertical-hidden
+  > .os-scrollbar-horizontal {
   right: 0;
   left: 0;
 }
@@ -565,16 +576,34 @@ THEMES:
 .os-theme-light > .os-scrollbar > .os-scrollbar-track {
   background: transparent;
 }
-.os-theme-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle,
-.os-theme-light > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+.os-theme-dark
+  > .os-scrollbar-horizontal
+  > .os-scrollbar-track
+  > .os-scrollbar-handle,
+.os-theme-light
+  > .os-scrollbar-horizontal
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
   min-width: 30px;
 }
-.os-theme-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle,
-.os-theme-light > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+.os-theme-dark
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle,
+.os-theme-light
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
   min-height: 30px;
 }
-.os-theme-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,
-.os-theme-light.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+.os-theme-dark.os-host-transition
+  > .os-scrollbar
+  > .os-scrollbar-track
+  > .os-scrollbar-handle,
+.os-theme-light.os-host-transition
+  > .os-scrollbar
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
@@ -590,23 +619,35 @@ THEMES:
 .os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
   background: rgba(255, 255, 255, 0.4);
 }
-.os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
+.os-theme-dark
+  > .os-scrollbar:hover
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
   background: rgba(0, 0, 0, 0.55);
 }
-.os-theme-light > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
+.os-theme-light
+  > .os-scrollbar:hover
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
   background: rgba(255, 255, 255, 0.55);
 }
-.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
+.os-theme-dark
+  > .os-scrollbar
+  > .os-scrollbar-track
+  > .os-scrollbar-handle.active {
   background: rgba(0, 0, 0, 0.7);
 }
-.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
+.os-theme-light
+  > .os-scrollbar
+  > .os-scrollbar-track
+  > .os-scrollbar-handle.active {
   background: rgba(255, 255, 255, 0.7);
 }
 .os-theme-dark > .os-scrollbar-horizontal .os-scrollbar-handle:before,
 .os-theme-dark > .os-scrollbar-vertical .os-scrollbar-handle:before,
 .os-theme-light > .os-scrollbar-horizontal .os-scrollbar-handle:before,
 .os-theme-light > .os-scrollbar-vertical .os-scrollbar-handle:before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -614,10 +655,18 @@ THEMES:
   bottom: 0;
   display: block;
 }
-.os-theme-dark.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,
-.os-theme-dark.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before,
-.os-theme-light.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,
-.os-theme-light.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before {
+.os-theme-dark.os-host-scrollbar-horizontal-hidden
+  > .os-scrollbar-horizontal
+  .os-scrollbar-handle:before,
+.os-theme-dark.os-host-scrollbar-vertical-hidden
+  > .os-scrollbar-vertical
+  .os-scrollbar-handle:before,
+.os-theme-light.os-host-scrollbar-horizontal-hidden
+  > .os-scrollbar-horizontal
+  .os-scrollbar-handle:before,
+.os-theme-light.os-host-scrollbar-vertical-hidden
+  > .os-scrollbar-vertical
+  .os-scrollbar-handle:before {
   display: none;
 }
 .os-theme-dark > .os-scrollbar-horizontal .os-scrollbar-handle:before,
@@ -631,7 +680,9 @@ THEMES:
   right: -2px;
 }
 .os-host-rtl.os-theme-dark > .os-scrollbar-vertical .os-scrollbar-handle:before,
-.os-host-rtl.os-theme-light > .os-scrollbar-vertical .os-scrollbar-handle:before {
+.os-host-rtl.os-theme-light
+  > .os-scrollbar-vertical
+  .os-scrollbar-handle:before {
   right: -6px;
   left: -2px;
 }

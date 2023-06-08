@@ -1,7 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useDispatch } from "react-redux";
 import { withRouter, RouteComponentProps } from "react-router-dom";
-import { actionTheme, utilityAction } from "../../redux";
+import {
+  setFooter,
+  setHeader,
+  setLoading,
+  setSidebar,
+  stopLoading
+} from "../../redux";
 import { useEffect } from "react";
 import FormLogin from "./form";
 
@@ -16,26 +22,26 @@ const Login: React.FC<LoginProps> = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actionTheme.setSidebar(false));
-    dispatch(actionTheme.setFooter(false));
-    dispatch(actionTheme.setHeader(false));
+    dispatch(setSidebar(false));
+    dispatch(setFooter(false));
+    dispatch(setHeader(false));
     return () => {
-      dispatch(actionTheme.setHeader(true));
-      dispatch(actionTheme.setSidebar(true));
-      dispatch(actionTheme.setFooter(true));
+      dispatch(setHeader(true));
+      dispatch(setSidebar(true));
+      dispatch(setFooter(true));
     };
   }, [dispatch]);
 
   const handleSubmit = (data: FormData) => {
     console.log(data);
     dispatch(
-      utilityAction.setLoading({
+      setLoading({
         content: true,
         button: true
       })
     );
     setTimeout(() => {
-      dispatch(utilityAction.stopLoading());
+      dispatch(stopLoading());
       props.history.push("/dashboard");
     }, 4000);
   };

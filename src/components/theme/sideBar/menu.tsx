@@ -19,7 +19,7 @@ const menu: Array<Menu> = [
   {
     path: "/dashboard",
     icon: "nav-icon fas fa-tachometer-alt",
-    title: "Dashboard"
+    title: "Dashboard",
   },
   {
     path: "#",
@@ -28,13 +28,13 @@ const menu: Array<Menu> = [
     children: [
       {
         path: "/data-users",
-        title: "Data Users"
+        title: "Data Users",
       },
       {
         path: "/category",
-        title: "Menu 2"
-      }
-    ]
+        title: "Menu 2",
+      },
+    ],
   },
   {
     path: "#",
@@ -43,7 +43,7 @@ const menu: Array<Menu> = [
     children: [
       {
         path: "#",
-        title: "Level 1"
+        title: "Level 1",
       },
       {
         path: "#",
@@ -52,24 +52,24 @@ const menu: Array<Menu> = [
         children: [
           {
             path: "#",
-            title: "Sub Level 2"
+            title: "Sub Level 2",
           },
           {
             path: "#",
-            title: "Sub Level 3"
+            title: "Sub Level 3",
           },
           {
             path: "#",
-            title: "Sub Level 4"
-          }
-        ]
+            title: "Sub Level 4",
+          },
+        ],
       },
       {
         path: "#",
-        title: "Level 3"
-      }
-    ]
-  }
+        title: "Level 3",
+      },
+    ],
+  },
 ];
 
 export default menu;

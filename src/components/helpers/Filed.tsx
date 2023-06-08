@@ -37,7 +37,7 @@ const ReanderField = ({
   textColor = "text-black",
   formGroup,
   iconFormGroup,
-  meta
+  meta,
 }: IFieldProps) => {
   const showError = meta.touched && meta.error;
 

@@ -20,6 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  // "include": ["src"],
+  "include": ["vite.config.ts", ".eslintrc.cjs", "src", "windi.config.ts"],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }
