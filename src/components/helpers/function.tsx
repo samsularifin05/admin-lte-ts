@@ -99,7 +99,7 @@ export const LoadingContent = () => {
       }}
       className="d-flex justify-content-center align-items-center"
     >
-      <Spin tip="Loading..." />
+      <Spin />
     </div>
   );
 };
