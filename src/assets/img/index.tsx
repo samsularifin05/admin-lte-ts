@@ -1,3 +1,3 @@
-import Logo from "./AdminLTELogo.png";
+import Logo from "./AdminLTELogo.webp";
 
 export { Logo };
