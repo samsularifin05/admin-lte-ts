@@ -42,6 +42,7 @@
     "javascript-obfuscator": "^4.0.2",
     "prettier": "^2.8.8",
     "redux-logger": "^3.0.6",
+    "rollup-plugin-visualizer": "^5.9.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-compression": "^0.5.1",
