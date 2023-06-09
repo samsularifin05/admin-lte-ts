@@ -35,9 +35,10 @@ export default defineConfig({
       output: {
         chunkFileNames: "assets/js/[hash].js",
         entryFileNames: "assets/js/[hash].js",
+
         assetFileNames: ({ name }) => {
-          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? "")) {
-            return "assets/images/[hash][extname]";
+          if (/\.(gif|jpe?g|png|svg|avif)$/.test(name ?? "")) {
+            return "assets/img/[hash][extname]";
           }
           if (/\.(ttf|woff2|svg)$/.test(name ?? "")) {
             return "assets/font/[hash][extname]";
@@ -45,6 +46,7 @@ export default defineConfig({
           if (/\.css$/.test(name ?? "")) {
             return "assets/css/[hash][extname]";
           }
+
           return "assets/[hash][extname]";
         }
       }

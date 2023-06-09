@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { selector, setLoading, sidebarToggle, stopLoading } from "../../redux";
+import { Profile } from "../../assets";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
   const logout = () => {
     dispatch(
       setLoading({
-        content: true,
+        content: true
       })
     );
     setTimeout(() => {
@@ -48,11 +49,12 @@ const Header: React.FC = () => {
           <div className="nav-item dropdown" onMouseEnter={toggleMenu}>
             <Link to="#" className="nav-link dropdown-toggle user-action">
               <img
-                src="https://www.tutorialrepublic.com/examples/images/avatar/2.jpg"
+                src={Profile}
                 className="avatarProfile"
                 alt="Avatar"
+                height="64"
               />{" "}
-              SAM <b className="caret"></b>
+              <span className="text-dark">SAM</span> <b className="caret"></b>
             </Link>
             <div
               className={`dropdown-menu ${menu ? "show" : ""}`}
