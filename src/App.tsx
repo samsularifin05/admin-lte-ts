@@ -5,7 +5,6 @@ import {
   Header,
   Sidebar,
   Footer,
-  LoadingApp,
   removeWindowClass,
   calculateWindowSize,
   addWindowClass,
@@ -15,6 +14,7 @@ import {
 import { Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { screenSize } from "./redux";
+import Skeleton from "react-loading-skeleton";
 
 function App() {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ function App() {
     }
   }, [dispatch, utility.screenSize, utility.sidebarToggle, windowSize]);
   return (
-    <Suspense fallback={<LoadingApp />}>
+    <Suspense fallback={<Skeleton height={"100vh"} />}>
       <div className="wrapper">
         {theme.header && <Header />}
         {theme.sidebar && <Sidebar />}
@@ -54,6 +54,7 @@ function App() {
         {theme.footer && <Footer />}
       </div>
       {utility.setLoading.content && <LoadingContent />}
+
       <div
         id="sidebar-overlay"
         role="presentation"
