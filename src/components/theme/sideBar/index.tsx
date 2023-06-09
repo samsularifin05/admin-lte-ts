@@ -1,7 +1,8 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Link, Route } from "react-router-dom";
 import menuApps from "./menu";
-import SidebarNavList from "./SidebarNavList";
+const SidebarNavList = lazy(() => import("./SidebarNavList"));
+
 const Sidebar: React.FC = () => {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">

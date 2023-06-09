@@ -1,11 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-// import { viteSingleFile } from "vite-plugin-singlefile";
-import { defineConfig, type PluginOption } from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import htmlMinifier from "vite-plugin-html-minifier";
-import { visualizer } from "rollup-plugin-visualizer";
+import { terser } from "rollup-plugin-terser";
 
 export default defineConfig({
   optimizeDeps: {
@@ -13,11 +12,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    visualizer() as PluginOption,
     htmlMinifier({
       minify: true
     })
-    // viteSingleFile()
   ],
 
   test: {
@@ -33,6 +30,8 @@ export default defineConfig({
     minify: true,
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
+      plugins: [terser()],
+
       output: {
         chunkFileNames: "assets/js/[hash].js",
         entryFileNames: "assets/js/[hash].js",
