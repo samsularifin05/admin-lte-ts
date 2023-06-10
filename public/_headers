@@ -3,6 +3,8 @@
   Cache-Control: public, max-age=31536000
 
   # Header Kontrol Cache
+  /*.html
+  Cache-Control: public, max-age=3600
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 /*.css
@@ -12,4 +14,8 @@
 /*.jpg
   Cache-Control: public, max-age=31536000
 /*.png
+  Cache-Control: public, max-age=31536000
+/*.svg
+  Cache-Control: public, max-age=31536000
+/*.avif
   Cache-Control: public, max-age=31536000
