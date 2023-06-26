@@ -1,9 +1,20 @@
-// import { useDispatch, useSelector } from 'react-redux'
-
 import { Link } from "react-router-dom";
 import { Card, PanelContent } from "../../components/helpers";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { useEffect } from "react";
+import { fetchUsers, selector } from "../../redux";
+import { useSelector } from "react-redux";
 
 const Dashboard = function () {
+  const dispatch = useDispatch<AppDispatch>();
+  const datauser = useSelector(selector.datauser);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  console.log(datauser);
   return (
     <PanelContent headerContent title="Dashboard">
       <div className="row">
