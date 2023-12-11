@@ -6,9 +6,13 @@ const SidebarNavList = lazy(() => import("./SidebarNavList"));
 const Sidebar: React.FC = () => {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
-      <Link to="/dashboard" className="brand-link text-center">
-        <span className="brand-text font-weight-light text-center">ADMIN</span>
-      </Link>
+    <Link to="/dashboard" className="brand-link text-center">
+      <span className="brand-text font-weight-light text-center">ADMIN</span>
+    </Link>
+    <div
+      className="sidebar-scroll-container"
+      style={{ maxHeight: "calc(100vh - 80px)", overflowY: "auto" }}
+    >
       <div className="sidebar">
         <nav className="mt-2">
           <ul
@@ -16,7 +20,7 @@ const Sidebar: React.FC = () => {
             data-widget="treeview"
             data-accordion="false"
           >
-            {menuApps.map((menu, index) => (
+            {newMenuAkses.map((menu: any, index: number) => (
               <Route
                 path={menu.path}
                 key={index}
@@ -26,7 +30,8 @@ const Sidebar: React.FC = () => {
           </ul>
         </nav>
       </div>
-    </aside>
+    </div>
+  </aside>
   );
 };
 
